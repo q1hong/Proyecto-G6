@@ -25,7 +25,7 @@ int encrypt_data(const u8 *key, const char *plaintext, size_t len,
     int ret = 0;
     unsigned int total_len = IV_LEN + len; // IV + texto plano
     
-    // Allocate output buffer (IV prepended to ciphertext)
+    // Asignar output buffer (IV prepended to ciphertext)
     u8 *output = kmalloc(total_len, GFP_KERNEL);
     if (!output) return -ENOMEM;
     iv = output; // First 16 bytes = IV
