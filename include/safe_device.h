@@ -3,6 +3,17 @@
 
 #include <linux/ioctl.h>
 #include <linux/types.h>
+#include <linux/module.h>
+#include <linux/fs.h>
+#include <linux/cdev.h>
+#include <linux/device.h>
+#include <linux/uaccess.h>
+#include <linux/slab.h>
+#include <linux/string.h>
+#include <crypto/skcipher.h>
+#include <linux/list.h>
+#include <linux/mutex.h>
+#include <linux/random.h>
 
 #define DEVICE_NAME "safe_device"
 #define MAX_PW_LENGTH 256
